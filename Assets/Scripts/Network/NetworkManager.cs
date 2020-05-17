@@ -5,16 +5,14 @@ using UnityEngine.UI;
 
 public class NetworkManager : MonoBehaviour
 {
-  [SerializeField] string version = "v0.0.1";
-  [SerializeField] string roomName = "zombie-fps-test";
-  [SerializeField] string playerName = "Player";
+  [SerializeField] string playerName = "VietHung";
   [SerializeField] List<GameObject> players = new List<GameObject>();
   public GameObject player;
-  public Transform spawnPoint;
+  public Transform PlayerSpawnPoint;
   public GameObject enemySpawner;
-  public GameObject lobbyCam;
-  public GameObject lobbyUI;
-  public GameObject inGameUI;
+  public GameObject labCam;
+  public GameObject labUI;
+  public GameObject startGameUI;
   public Text statusText;
 
   public List<GameObject> Players
@@ -27,12 +25,12 @@ public class NetworkManager : MonoBehaviour
 
   void Start()
   {
-    lobbyCam.SetActive(false);
-    lobbyUI.SetActive(false);
+    labCam.SetActive(false);
+    labUI.SetActive(false);
 
-    GameObject playerObj = Instantiate(player, spawnPoint.position, spawnPoint.rotation);
+    GameObject playerObj = Instantiate(player, PlayerSpawnPoint.position, PlayerSpawnPoint.rotation);
 
-    inGameUI.SetActive(true);
+    startGameUI.SetActive(true);
     enemySpawner.SetActive(true);
     enemySpawner.GetComponent<EnemySpawner>().target = playerObj;
   }
