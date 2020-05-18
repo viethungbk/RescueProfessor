@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
   void Start()
   {
     healthManager = GetComponent<HealthManager>();
-    deadScreen = GameObject.Find("UI/InGameUI/DeadScreen");
+    deadScreen = GameObject.Find("UI/StartGameUI/DeadScreen");
   }
 
   void Update()
