@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class NetworkManager : MonoBehaviour
 {
   [SerializeField] string playerName = "VietHung";
-  [SerializeField] List<GameObject> players = new List<GameObject>();
+  // [SerializeField] List<GameObject> players = new List<GameObject>();
   public GameObject player;
   public Transform PlayerSpawnPoint;
   public GameObject enemySpawner;
@@ -15,13 +15,13 @@ public class NetworkManager : MonoBehaviour
   public GameObject startGameUI;
   public Text statusText;
 
-  public List<GameObject> Players
-  {
-    get
-    {
-      return players;
-    }
-  }
+  // public List<GameObject> Players
+  // {
+  //   get
+  //   {
+  //     return players;
+  //   }
+  // }
 
   void Start()
   {

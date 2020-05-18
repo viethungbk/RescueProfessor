@@ -132,8 +132,8 @@ public class WeaponBase : MonoBehaviour
     crosshairCircle = spriteManager.GetSprite("Crosshair_Circle");
     crosshairCircleAim = spriteManager.GetSprite("Crosshair_Circle_Aim");
 
-    weaponNameText = GameObject.Find("UI/InGameUI/WeaponStatus/WeaponNameText").GetComponent<Text>();
-    weaponAmmoText = GameObject.Find("UI/InGameUI/WeaponStatus/AmmoText").GetComponent<Text>();
+    weaponNameText = GameObject.Find("UI/StartGameUI/WeaponStatus/WeaponNameText").GetComponent<Text>();
+    weaponAmmoText = GameObject.Find("UI/StartGameUI/WeaponStatus/AmmoText").GetComponent<Text>();
   }
 
   void Update()

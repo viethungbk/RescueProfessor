@@ -49,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
     prefabManager = PrefabManager.GetInstance();
     enemies.Add(prefabManager.GetPrefab("Zombie"));
 
-    networkManager = GameObject.Find("GameManager").GetComponent<NetworkManager>();
+    networkManager = GameObject.Find("GameController").GetComponent<NetworkManager>();
   }
 
   void Update()

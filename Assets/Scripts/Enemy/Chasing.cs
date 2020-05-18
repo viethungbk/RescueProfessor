@@ -28,7 +28,7 @@ public class Chasing : MonoBehaviour
     agent = GetComponent<NavMeshAgent>();
     audioSource = GetComponent<AudioSource>();
 
-    networkManager = GameObject.Find("GameManager").GetComponent<NetworkManager>();
+    networkManager = GameObject.Find("GameController").GetComponent<NetworkManager>();
   }
 
   IEnumerator distUpdateCo = null;

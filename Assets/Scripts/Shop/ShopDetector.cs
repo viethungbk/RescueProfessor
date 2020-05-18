@@ -23,8 +23,8 @@ public class ShopDetector : MonoBehaviour
 
   void Start()
   {
-    shopText = GameObject.Find("UI/InGameUI/Info/ShopText").GetComponent<Text>();
-    warningText = GameObject.Find("UI/InGameUI/Info/WarningText").GetComponent<Text>();
+    shopText = GameObject.Find("UI/StartGameUI/Info/ShopText").GetComponent<Text>();
+    warningText = GameObject.Find("UI/StartGameUI/Info/WarningText").GetComponent<Text>();
   }
 
   void PrintWarning(string text)

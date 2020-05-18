@@ -14,9 +14,9 @@ public class LevelSystem : MonoBehaviour
 
   void Start()
   {
-    levelText = GameObject.Find("UI/InGameUI/CharacterStatus/LevelText").GetComponent<Text>();
-    expText = GameObject.Find("UI/InGameUI/CharacterStatus/ExpText").GetComponent<Text>();
-    expSlider = GameObject.Find("UI/InGameUI/CharacterStatus/ExpText/Slider").GetComponent<Slider>();
+    levelText = GameObject.Find("UI/StartGameUI/CharacterStatus/LevelText").GetComponent<Text>();
+    expText = GameObject.Find("UI/StartGameUI/CharacterStatus/ExpText").GetComponent<Text>();
+    expSlider = GameObject.Find("UI/StartGameUI/CharacterStatus/ExpText/Slider").GetComponent<Slider>();
 
     UpdateUI();
   }
