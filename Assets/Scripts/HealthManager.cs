@@ -20,7 +20,7 @@ public class HealthManager : MonoBehaviour
   {
     animator = GetComponent<Animator>();
 
-    if (isPlayer) healthText = GameObject.Find("UI/InGameUI/CharacterStatus/HealthText").GetComponent<Text>();
+    if (isPlayer) healthText = GameObject.Find("UI/StartGameUI/CharacterStatus/HealthText").GetComponent<Text>();
   }
 
   void Update()
