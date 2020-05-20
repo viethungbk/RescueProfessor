@@ -6341,30 +6341,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f076850a6d2fc764ca6aded334c9bde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: 
-  weaponType: 0
+  weaponName: Stov Rifle
+  weaponType: 3
   reloadType: 0
   crosshairType: 0
   fireMode: 0
-  damage: 17
-  fireRate: 0.1
-  range: 100
+  damage: 40
+  fireRate: 0.13
+  range: 500
   bulletsPerMag: 30
-  bulletsLeft: 45
-  startBullets: 45
+  bulletsLeft: 90
+  startBullets: 90
   loadedBullets: 0
   pellets: 1
-  spread: 0
+  spread: 0.9
   bulletEjectingSpeed: 5
   hasLastFire: 0
-  recoil: 0
-  rewardText: {fileID: 0}
+  recoil: 0.65
+  rewardText: {fileID: 4000747548620764719}
   weaponNameText: {fileID: 0}
   weaponAmmoText: {fileID: 0}
   aimPos: {x: 0, y: 0, z: 0}
   aimingSpeed: 8
-  fundSystem: {fileID: 0}
-  levelSystem: {fileID: 0}
+  fundSystem: {fileID: 4000747548620764706}
+  levelSystem: {fileID: 4000747548620764705}
   drySound: {fileID: 8300000, guid: 14f740be82254164bae8ea4c1cadd8d9, type: 3}
   gunFireSound: {fileID: 8300000, guid: 4527956939ae45d459947b5b87d070b7, type: 3}
   controller: {fileID: 4000747548620764716}
@@ -6379,7 +6379,7 @@ MonoBehaviour:
   muzzlePoint: {fileID: 4000747548536913639}
   caseSpawnPoint: {fileID: 4000747547603592675}
   muzzleflash: {fileID: 4000747548482442393}
-  upgradeDamageFactor: 1
+  upgradeDamageFactor: 5
   upgradeDamage: 0
   upgradeMagFactor: 1
   upgradeMag: 0
@@ -6387,9 +6387,9 @@ MonoBehaviour:
   upgradeMaxAmmo: 0
   upgradeRangeFactor: 1
   upgradeRange: 0
-  upgradeRecoilFactor: 1
+  upgradeRecoilFactor: 0.05
   upgradeRecoil: 0
-  upgradeReloadFactor: 1
+  upgradeReloadFactor: 0.2
   upgradeReload: 0
   upgradeSteadyFactor: 1
   upgradeSteady: 0
@@ -12999,7 +12999,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1567818261435876064, guid: 742917be3ec53e242a2e8d97c8067b06, type: 3}
+  - {fileID: 2100000, guid: 9cdfb478ed7531f4e9f2bfa5b28b9310, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26104,7 +26104,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4903864921079101838, guid: dda8550df66f31641a8d62be78d98784, type: 3}
+  - {fileID: 2100000, guid: 3a75d4e4d4126bd4bb05b19b77df784a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26662,6 +26662,7 @@ GameObject:
   - component: {fileID: 4000747548913638126}
   - component: {fileID: 4000747548913638125}
   - component: {fileID: 4000747548913638124}
+  - component: {fileID: 1492154668773606231}
   m_Layer: 8
   m_Name: M870
   m_TagString: Untagged
@@ -26736,7 +26737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xOffset: 0
   yOffset: 0
-  controller: {fileID: 0}
+  controller: {fileID: 4000747548620764716}
 --- !u!114 &4000747548913638124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26749,43 +26750,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f076850a6d2fc764ca6aded334c9bde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: 
-  weaponType: 0
-  reloadType: 0
+  weaponName: Defender Shotgun
+  weaponType: 1
+  reloadType: 1
   crosshairType: 0
-  fireMode: 0
-  damage: 17
-  fireRate: 0.1
-  range: 100
-  bulletsPerMag: 30
-  bulletsLeft: 45
-  startBullets: 45
+  fireMode: 1
+  damage: 14
+  fireRate: 0.8
+  range: 50
+  bulletsPerMag: 8
+  bulletsLeft: 32
+  startBullets: 32
   loadedBullets: 0
-  pellets: 1
-  spread: 0
+  pellets: 8
+  spread: 0.7
   bulletEjectingSpeed: 5
   hasLastFire: 0
-  recoil: 0
-  rewardText: {fileID: 0}
+  recoil: 0.9
+  rewardText: {fileID: 4000747548620764719}
   weaponNameText: {fileID: 0}
   weaponAmmoText: {fileID: 0}
   aimPos: {x: 0, y: 0, z: 0}
   aimingSpeed: 8
-  fundSystem: {fileID: 0}
-  levelSystem: {fileID: 0}
-  drySound: {fileID: 0}
-  gunFireSound: {fileID: 0}
-  controller: {fileID: 0}
-  hitParticle: {fileID: 0}
-  bulletImpact: {fileID: 0}
-  gunSmoke: {fileID: 0}
-  emptyCase: {fileID: 0}
-  soundManager: {fileID: 0}
-  shootPoint: {fileID: 0}
-  muzzlePoint: {fileID: 0}
-  caseSpawnPoint: {fileID: 0}
-  muzzleflash: {fileID: 0}
-  upgradeDamageFactor: 1
+  fundSystem: {fileID: 4000747548620764706}
+  levelSystem: {fileID: 4000747548620764705}
+  drySound: {fileID: 8300000, guid: 14f740be82254164bae8ea4c1cadd8d9, type: 3}
+  gunFireSound: {fileID: 8300000, guid: a1f326db1df5c6d47bc7c5cc088b587a, type: 3}
+  controller: {fileID: 4000747548620764716}
+  hitParticle: {fileID: 1617700753897852, guid: 491ec82767fce8740b47eb749e457e89,
+    type: 3}
+  bulletImpact: {fileID: 1235035097298946, guid: 7f76b1a83b4f93043b9e288359524f66,
+    type: 3}
+  gunSmoke: {fileID: 1922853606321582, guid: 3c97f16cf5efdc247ae4edac3995824b, type: 3}
+  emptyCase: {fileID: 1029217829519620, guid: 6039990544b504c459a3dfe9280646e9, type: 3}
+  soundManager: {fileID: 4000747548133476779}
+  shootPoint: {fileID: 4000747548243723222}
+  muzzlePoint: {fileID: 4000747548947432377}
+  caseSpawnPoint: {fileID: 4000747548077211824}
+  muzzleflash: {fileID: 4000747548565743788}
+  upgradeDamageFactor: 2
   upgradeDamage: 0
   upgradeMagFactor: 1
   upgradeMag: 0
@@ -26793,12 +26796,27 @@ MonoBehaviour:
   upgradeMaxAmmo: 0
   upgradeRangeFactor: 1
   upgradeRange: 0
-  upgradeRecoilFactor: 1
+  upgradeRecoilFactor: 0.05
   upgradeRecoil: 0
-  upgradeReloadFactor: 1
+  upgradeReloadFactor: 0.2
   upgradeReload: 0
   upgradeSteadyFactor: 1
   upgradeSteady: 0
+--- !u!114 &1492154668773606231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000747548913638112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e52875c1e251b4cbfd4b0f94cfe01d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundManager: {fileID: 4000747548133476779}
+  insertSound: {fileID: 8300000, guid: 0e35ff054974be04387173d8a4d423bf, type: 3}
+  pumpSound: {fileID: 8300000, guid: b040d30e20993dc4caa4a1c18309b933, type: 3}
 --- !u!1 &4000747548914807459
 GameObject:
   m_ObjectHideFlags: 0
@@ -28106,7 +28124,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300004, guid: 679b8f7f23e27004baecff8a7a644c27, type: 3}
+  m_Mesh: {fileID: 1120122583854381583, guid: c40d03d6dc14f6e42ba059242d785cca, type: 3}
   m_Bones:
   - {fileID: 4000747548520431595}
   - {fileID: 4000747547401743998}
@@ -28200,6 +28218,7 @@ GameObject:
   - component: {fileID: 4000747549188959240}
   - component: {fileID: 4000747549188959287}
   - component: {fileID: 4000747549188959286}
+  - component: {fileID: 1842711667302787170}
   m_Layer: 8
   m_Name: MP5K
   m_TagString: Untagged
@@ -28274,7 +28293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xOffset: 0
   yOffset: 0
-  controller: {fileID: 0}
+  controller: {fileID: 4000747548620764716}
 --- !u!114 &4000747549188959286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28287,42 +28306,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f076850a6d2fc764ca6aded334c9bde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: 
-  weaponType: 0
+  weaponName: Compakt PDW
+  weaponType: 2
   reloadType: 0
   crosshairType: 0
   fireMode: 0
-  damage: 17
-  fireRate: 0.1
+  damage: 14
+  fireRate: 0.08
   range: 100
-  bulletsPerMag: 30
-  bulletsLeft: 45
-  startBullets: 45
+  bulletsPerMag: 25
+  bulletsLeft: 150
+  startBullets: 150
   loadedBullets: 0
   pellets: 1
-  spread: 0
+  spread: 0.8
   bulletEjectingSpeed: 5
   hasLastFire: 0
-  recoil: 0
-  rewardText: {fileID: 0}
+  recoil: 0.4
+  rewardText: {fileID: 4000747548620764719}
   weaponNameText: {fileID: 0}
   weaponAmmoText: {fileID: 0}
   aimPos: {x: 0, y: 0, z: 0}
   aimingSpeed: 8
-  fundSystem: {fileID: 0}
-  levelSystem: {fileID: 0}
-  drySound: {fileID: 0}
-  gunFireSound: {fileID: 0}
-  controller: {fileID: 0}
-  hitParticle: {fileID: 0}
-  bulletImpact: {fileID: 0}
-  gunSmoke: {fileID: 0}
-  emptyCase: {fileID: 0}
-  soundManager: {fileID: 0}
-  shootPoint: {fileID: 0}
-  muzzlePoint: {fileID: 0}
-  caseSpawnPoint: {fileID: 0}
-  muzzleflash: {fileID: 0}
+  fundSystem: {fileID: 4000747548620764706}
+  levelSystem: {fileID: 4000747548620764705}
+  drySound: {fileID: 8300000, guid: 14f740be82254164bae8ea4c1cadd8d9, type: 3}
+  gunFireSound: {fileID: 8300000, guid: af0a17346f2d84a4f97f9a3e1cd80b28, type: 3}
+  controller: {fileID: 4000747548620764716}
+  hitParticle: {fileID: 1617700753897852, guid: 491ec82767fce8740b47eb749e457e89,
+    type: 3}
+  bulletImpact: {fileID: 1235035097298946, guid: 7f76b1a83b4f93043b9e288359524f66,
+    type: 3}
+  gunSmoke: {fileID: 1922853606321582, guid: 3c97f16cf5efdc247ae4edac3995824b, type: 3}
+  emptyCase: {fileID: 1029217829519620, guid: 6039990544b504c459a3dfe9280646e9, type: 3}
+  soundManager: {fileID: 4000747548133476779}
+  shootPoint: {fileID: 4000747548243723222}
+  muzzlePoint: {fileID: 4000747548251452837}
+  caseSpawnPoint: {fileID: 4000747547715838216}
+  muzzleflash: {fileID: 4000747547349321975}
   upgradeDamageFactor: 1
   upgradeDamage: 0
   upgradeMagFactor: 1
@@ -28331,12 +28352,28 @@ MonoBehaviour:
   upgradeMaxAmmo: 0
   upgradeRangeFactor: 1
   upgradeRange: 0
-  upgradeRecoilFactor: 1
+  upgradeRecoilFactor: 0.03
   upgradeRecoil: 0
-  upgradeReloadFactor: 1
+  upgradeReloadFactor: 0.3
   upgradeReload: 0
   upgradeSteadyFactor: 1
   upgradeSteady: 0
+--- !u!114 &1842711667302787170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000747549188959242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4621bb9b08cf774186166af3f17072f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundManager: {fileID: 4000747548133476779}
+  magOutSound: {fileID: 8300000, guid: 3461096e3826c4d49aa3531c76bd0e4e, type: 3}
+  magInSound: {fileID: 8300000, guid: 44edfaefc046ad54388428e9344d6fa8, type: 3}
+  boltSound: {fileID: 8300000, guid: d1f0e8c93495d4b4c940c16c9fbc3904, type: 3}
 --- !u!1 &4000747549201386435
 GameObject:
   m_ObjectHideFlags: 0
