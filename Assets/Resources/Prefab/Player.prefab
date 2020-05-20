@@ -25327,7 +25327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  isPlayer: 0
+  isPlayer: 1
   removeColliderOnDeath: 0
   referer: {fileID: 0}
   damageFactor: 1
