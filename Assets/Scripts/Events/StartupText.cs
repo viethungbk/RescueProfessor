@@ -7,8 +7,8 @@ public class StartupText : MonoBehaviour
 {
   Text text;
   GlobalSoundManager globalSoundManager;
-  int remainSeconds;
 
+  public int remainSeconds = 10;
   public AudioClip prepare;
   public AudioClip gameBegins;
   public AudioClip beep;
@@ -19,7 +19,6 @@ public class StartupText : MonoBehaviour
     globalSoundManager.Play(prepare);
 
     text = GetComponent<Text>();
-    remainSeconds = 10;
 
     StartCoroutine(StartAnimation());
   }

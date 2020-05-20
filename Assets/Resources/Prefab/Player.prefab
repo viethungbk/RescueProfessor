@@ -25677,17 +25677,17 @@ MonoBehaviour:
   crosshairType: 0
   fireMode: 1
   damage: 17
-  fireRate: 0.1
+  fireRate: 0.25
   range: 100
-  bulletsPerMag: 30
-  bulletsLeft: 45
-  startBullets: 45
+  bulletsPerMag: 15
+  bulletsLeft: 60
+  startBullets: 60
   loadedBullets: 0
   pellets: 1
-  spread: 0
+  spread: 0.7
   bulletEjectingSpeed: 5
-  hasLastFire: 0
-  recoil: 0
+  hasLastFire: 1
+  recoil: 0.5
   rewardText: {fileID: 4000747548620764719}
   weaponNameText: {fileID: 0}
   weaponAmmoText: {fileID: 0}
@@ -25709,7 +25709,7 @@ MonoBehaviour:
   muzzlePoint: {fileID: 4000747548421026467}
   caseSpawnPoint: {fileID: 4000747547944462810}
   muzzleflash: {fileID: 4000747548043048195}
-  upgradeDamageFactor: 1
+  upgradeDamageFactor: 3
   upgradeDamage: 0
   upgradeMagFactor: 1
   upgradeMag: 0
@@ -25717,7 +25717,7 @@ MonoBehaviour:
   upgradeMaxAmmo: 0
   upgradeRangeFactor: 1
   upgradeRange: 0
-  upgradeRecoilFactor: 1
+  upgradeRecoilFactor: 0.04
   upgradeRecoil: 0
   upgradeReloadFactor: 1
   upgradeReload: 0

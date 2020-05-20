@@ -136,8 +136,8 @@ GameObject:
   - component: {fileID: 154643966}
   m_Layer: 0
   m_Name: AKMShop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Shop
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 263387056}
   - component: {fileID: 263387058}
   - component: {fileID: 263387057}
+  - component: {fileID: 263387059}
   m_Layer: 5
   m_Name: Startup
   m_TagString: Untagged
@@ -362,6 +363,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263387055}
   m_CullTransparentMesh: 0
+--- !u!114 &263387059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263387055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d4d4006cd20e64eaa3080046eee580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remainSeconds: 9
+  prepare: {fileID: 8300000, guid: c7a1f2de0ef98cd47831bef3d324ac1f, type: 3}
+  gameBegins: {fileID: 8300000, guid: 257945dc11835904fa5edf1cc15e6425, type: 3}
+  beep: {fileID: 8300000, guid: 8164a76d17bb7cc4fa49c421681ad8d1, type: 3}
 --- !u!1 &281374909
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,8 +799,8 @@ GameObject:
   - component: {fileID: 531275289}
   m_Layer: 0
   m_Name: AmmoShop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Shop
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1514,8 +1531,8 @@ GameObject:
   - component: {fileID: 838930726}
   m_Layer: 0
   m_Name: ReloadUpgrade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Shop
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2032,8 +2049,8 @@ GameObject:
   - component: {fileID: 1038445142}
   m_Layer: 0
   m_Name: MP5KShop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Shop
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2427,8 +2444,8 @@ GameObject:
   - component: {fileID: 1232778289}
   m_Layer: 0
   m_Name: M870Shop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Shop
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3702,6 +3719,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4000747548697849146, guid: 0123fee850a036949854af240aeb9255,
+        type: 3}
+      propertyPath: weaponName
+      value: Police 9mm
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0123fee850a036949854af240aeb9255, type: 3}
 --- !u!1 &1869300273
@@ -3813,8 +3835,8 @@ GameObject:
   - component: {fileID: 1877597142}
   m_Layer: 0
   m_Name: RecoilUpgrade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Shop
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3854,7 +3876,7 @@ MeshCollider:
   m_GameObject: {fileID: 1877597136}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -4123,8 +4145,8 @@ GameObject:
   - component: {fileID: 1930809384}
   m_Layer: 0
   m_Name: DemageUpgrade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Shop
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4164,7 +4186,7 @@ MeshCollider:
   m_GameObject: {fileID: 1930809378}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
