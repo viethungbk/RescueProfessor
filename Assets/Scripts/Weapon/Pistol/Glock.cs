@@ -28,6 +28,7 @@ public class Glock : MonoBehaviour
 
   void OnBoltPulled()
   {
+    Debug.Log("OnBoltPulled");
     soundManager.Play(slideReleasedSound);
   }
 }
