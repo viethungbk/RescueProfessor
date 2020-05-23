@@ -357,6 +357,7 @@ public class WeaponBase : MonoBehaviour
 
   void StartReload()
   {
+    Debug.Log("StartReload");
     if (isReloading ||
       loadedBullets >= bulletsPerMag ||
       bulletsLeft <= 0) return;
@@ -369,8 +370,17 @@ public class WeaponBase : MonoBehaviour
     }
     else if (reloadType == ReloadType.INSERTION)
     {
-      if (loadedBullets <= 0) animator.CrossFadeInFixedTime("FPSHand|ReloadStartEmpty", 0.01f);
-      else animator.CrossFadeInFixedTime("FPSHand|ReloadStart", 0.01f);
+      Debug.Log("ReloadType.INSERTION");
+      if (loadedBullets <= 0)
+      {
+        Debug.Log("FPSHand|ReloadStartEmpty");
+        animator.CrossFadeInFixedTime("FPSHand|ReloadStartEmpty", 0.01f);
+      }
+      else
+      {
+        Debug.Log("FPSHand|ReloadStart");
+        animator.CrossFadeInFixedTime("FPSHand|ReloadStart", 0.01f);
+      }
     }
   }
 

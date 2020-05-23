@@ -109,7 +109,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.44818652
+      - time: 0.37361026
         functionName: OnPump
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -145,7 +145,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.51295334
+      - time: 0.4858347
         functionName: OnPump
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -296,21 +296,21 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.47409323
+      - time: 0.39951697
         functionName: OnAmmoInsertion
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.80051816
+      - time: 0.7056029
         functionName: OnPump
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9326425
+      - time: 0.86484593
         functionName: OnFirstAmmoInsert
         data: 
         objectReferenceParameter: {instanceID: 0}
