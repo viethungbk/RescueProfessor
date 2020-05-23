@@ -204,6 +204,8 @@ public class WeaponBase : MonoBehaviour
 
     RaycastHit hit;
 
+    DrawHitRay();
+
     for (int i = 0; i < pellets; i++)
     {
       if (Physics.Raycast(shootPoint.position, CalculateSpread(spread, shootPoint), out hit, range))
@@ -355,6 +357,7 @@ public class WeaponBase : MonoBehaviour
 
   void StartReload()
   {
+    Debug.Log("StartReload");
     if (isReloading ||
       loadedBullets >= bulletsPerMag ||
       bulletsLeft <= 0) return;
@@ -367,13 +370,23 @@ public class WeaponBase : MonoBehaviour
     }
     else if (reloadType == ReloadType.INSERTION)
     {
-      if (loadedBullets <= 0) animator.CrossFadeInFixedTime("FPSHand|ReloadStartEmpty", 0.01f);
-      else animator.CrossFadeInFixedTime("FPSHand|ReloadStart", 0.01f);
+      Debug.Log("ReloadType.INSERTION");
+      if (loadedBullets <= 0)
+      {
+        Debug.Log("FPSHand|ReloadStartEmpty");
+        animator.CrossFadeInFixedTime("FPSHand|ReloadStartEmpty", 0.01f);
+      }
+      else
+      {
+        Debug.Log("FPSHand|ReloadStart");
+        animator.CrossFadeInFixedTime("FPSHand|ReloadStart", 0.01f);
+      }
     }
   }
 
   void RefillAmmunitions()
   {
+    Debug.Log("RefillAmmunitions");
     int bulletsToLoad = bulletsPerMag - loadedBullets;
     int bulletsToDeduct = bulletsLeft >= bulletsToLoad ? bulletsToLoad : bulletsLeft;
 
@@ -419,6 +432,7 @@ public class WeaponBase : MonoBehaviour
 
   public void UpdateAmmoText()
   {
+    Debug.Log("UpdateAmmoText: " + loadedBullets + " / " + bulletsLeft);
     weaponAmmoText.text = loadedBullets + " / " + bulletsLeft;
   }
 
@@ -443,11 +457,13 @@ public class WeaponBase : MonoBehaviour
 
   void OnMagIn()
   {
+    Debug.Log("OnMagIn");
     RefillAmmunitions();
   }
 
   void OnAmmoInsertion()
   {
+    Debug.Log("OnAmmoInsertion");
     isReloading = false;  // Make gun fire is possible
     bulletsLeft--;
     loadedBullets++;
@@ -462,6 +478,7 @@ public class WeaponBase : MonoBehaviour
 
   void OnFirstAmmoInsert()
   {
+    Debug.Log("OnFirstAmmoInsert");
     if (bulletsLeft <= 0)
     {
       animator.CrossFadeInFixedTime("FPSHand|Stand", 0.01f);
@@ -474,11 +491,13 @@ public class WeaponBase : MonoBehaviour
 
   void OnBeforeInsert()
   {
+    Debug.Log("OnBeforeInsert");
     isReloading = true;
   }
 
   void OnAfterInsert()
   {
+    Debug.Log("OnBeforeInsert");
     if (loadedBullets >= bulletsPerMag)
     {
       animator.CrossFadeInFixedTime("FPSHand|ReloadEnd", 0.01f);
@@ -495,6 +514,7 @@ public class WeaponBase : MonoBehaviour
 
   void OnReloadEnd()
   {
+    Debug.Log("OnReloadEnd");
     isReloading = false;
   }
 }
