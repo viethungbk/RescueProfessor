@@ -162,7 +162,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.2
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0c2ecd592de58489f1760ba9703269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 105
+  health: 100
   isPlayer: 0
   removeColliderOnDeath: 0
   referer: {fileID: 0}
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  damage: 17
+  damage: 15
   isAttacking: 0
   shouldChase: 1
   isInLateUpdate: 0
@@ -333,8 +333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c902d2fb32f6144adbef2cb72fa3df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 4
-  fund: 6
+  exp: 3
+  fund: 5
 --- !u!1 &312000023372408847
 GameObject:
   m_ObjectHideFlags: 0

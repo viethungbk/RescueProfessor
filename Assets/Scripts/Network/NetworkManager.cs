@@ -10,7 +10,7 @@ public class NetworkManager : MonoBehaviour
   public GameObject player;
   public Transform PlayerSpawnPoint;
   public GameObject enemySpawner;
-  public GameObject labCam;
+  // public GameObject labCam;
   public GameObject labUI;
   public GameObject startGameUI;
   public Text statusText;
@@ -25,14 +25,14 @@ public class NetworkManager : MonoBehaviour
 
   void Start()
   {
-    labCam.SetActive(false);
+    // labCam.SetActive(false);
     labUI.SetActive(false);
 
-    GameObject playerObj = Instantiate(player, PlayerSpawnPoint.position, PlayerSpawnPoint.rotation);
+    // GameObject playerObj = Instantiate(player, PlayerSpawnPoint.position, PlayerSpawnPoint.rotation);
 
     startGameUI.SetActive(true);
     enemySpawner.SetActive(true);
-    enemySpawner.GetComponent<EnemySpawner>().target = playerObj;
+    enemySpawner.GetComponent<EnemySpawner>().target = player;
   }
 
 }
