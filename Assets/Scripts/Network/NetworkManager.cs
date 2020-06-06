@@ -8,6 +8,7 @@ public class NetworkManager : MonoBehaviour
   // [SerializeField] string playerName = "VietHung";
   // [SerializeField] List<GameObject> players = new List<GameObject>();
   public GameObject player;
+  public GameObject playerCamera;
   public Transform PlayerSpawnPoint;
   public GameObject enemySpawner;
   // public GameObject labCam;
@@ -32,7 +33,7 @@ public class NetworkManager : MonoBehaviour
 
     startGameUI.SetActive(true);
     enemySpawner.SetActive(true);
-    enemySpawner.GetComponent<EnemySpawner>().target = player;
+    enemySpawner.GetComponent<EnemySpawner>().target = playerCamera;
   }
 
 }

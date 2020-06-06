@@ -29,7 +29,7 @@ public class WeaponManager : MonoBehaviour
   void Start()
   {
     primaryWeapon = Weapon.None;
-    secondaryWeapon = Weapon.Glock;
+    secondaryWeapon = Weapon.AKM;
     currentWeapon = secondaryWeapon;
 
     primaryWeaponGO = null;

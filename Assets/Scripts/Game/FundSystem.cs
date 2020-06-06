@@ -11,9 +11,17 @@ public class FundSystem : MonoBehaviour
 
   void Start()
   {
-    fundText = GameObject.Find("UI/StartGameUI/CharacterStatus/FundText").GetComponent<Text>();
+    // fundText = GameObject.Find("UI/StartGameUI/CharacterStatus/FundText").GetComponent<Text>();
 
-    UpdateUI();
+    // UpdateUI();
+  }
+
+  void Update()
+  {
+    if (!fundText)
+    {
+      fundText = GameObject.Find("UI/StartGameUI/CharacterStatus/FundText").GetComponent<Text>();
+    }
   }
 
   void UpdateUI()

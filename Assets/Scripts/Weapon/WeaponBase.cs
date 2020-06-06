@@ -132,12 +132,21 @@ public class WeaponBase : MonoBehaviour
     crosshairCircle = spriteManager.GetSprite("Crosshair_Circle");
     crosshairCircleAim = spriteManager.GetSprite("Crosshair_Circle_Aim");
 
-    weaponNameText = GameObject.Find("UI/StartGameUI/WeaponStatus/WeaponNameText").GetComponent<Text>();
-    weaponAmmoText = GameObject.Find("UI/StartGameUI/WeaponStatus/AmmoText").GetComponent<Text>();
+    // weaponNameText = GameObject.Find("UI/StartGameUI/WeaponStatus/WeaponNameText").GetComponent<Text>();
+    // weaponAmmoText = GameObject.Find("UI/StartGameUI/WeaponStatus/AmmoText").GetComponent<Text>();
   }
 
   void Update()
   {
+    if (!weaponAmmoText)
+    {
+      weaponNameText = GameObject.Find("UI/StartGameUI/WeaponStatus/WeaponNameText").GetComponent<Text>();
+    }
+    if (!weaponAmmoText)
+    {
+      weaponAmmoText = GameObject.Find("UI/StartGameUI/WeaponStatus/AmmoText").GetComponent<Text>();
+    }
+
     if (fireMode == FireMode.SEMI && Input.GetButtonDown("Fire1") && !isReloading)
     {
       Fire();
@@ -355,7 +364,7 @@ public class WeaponBase : MonoBehaviour
     }
   }
 
-  void StartReload()
+  public void StartReload()
   {
     Debug.Log("StartReload");
     if (isReloading ||

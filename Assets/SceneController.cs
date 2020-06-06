@@ -9,6 +9,8 @@ public class SceneController : MonoBehaviour
   public GameObject gameController;
   public GameObject gamePlayAR;
 
+  private ShopDetector shopDetectorScript;
+
   // Start is called before the first frame update
   void Start()
   {

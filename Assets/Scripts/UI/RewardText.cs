@@ -14,7 +14,15 @@ public class RewardText : MonoBehaviour
 
   void Start()
   {
-    rewardText = GameObject.Find("UI/StartGameUI/Info/RewardText").GetComponent<Text>();
+    // rewardText = GameObject.Find("UI/StartGameUI/Info/RewardText").GetComponent<Text>();
+  }
+
+  void Update()
+  {
+    if (!rewardText)
+    {
+      rewardText = GameObject.Find("UI/StartGameUI/Info/RewardText").GetComponent<Text>();
+    }
   }
 
   public void Show(int exp, int fund)
