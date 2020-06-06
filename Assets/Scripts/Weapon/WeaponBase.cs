@@ -124,13 +124,13 @@ public class WeaponBase : MonoBehaviour
     originalPos = transform.localPosition;
     crosshair = GameObject.Find("Crosshair").GetComponent<Image>();
 
-    prefabManager = PrefabManager.GetInstance();
-    spriteManager = SpriteManager.GetInstance();
+    // prefabManager = PrefabManager.GetInstance();
+    // spriteManager = SpriteManager.GetInstance();
 
-    crosshairCross = spriteManager.GetSprite("Crosshair_Default");
-    crosshairCrossAim = spriteManager.GetSprite("Crosshair_Default_Aim");
-    crosshairCircle = spriteManager.GetSprite("Crosshair_Circle");
-    crosshairCircleAim = spriteManager.GetSprite("Crosshair_Circle_Aim");
+    // crosshairCross = spriteManager.GetSprite("Crosshair_Default");
+    // crosshairCrossAim = spriteManager.GetSprite("Crosshair_Default_Aim");
+    // crosshairCircle = spriteManager.GetSprite("Crosshair_Circle");
+    // crosshairCircleAim = spriteManager.GetSprite("Crosshair_Circle_Aim");
 
     // weaponNameText = GameObject.Find("UI/StartGameUI/WeaponStatus/WeaponNameText").GetComponent<Text>();
     // weaponAmmoText = GameObject.Find("UI/StartGameUI/WeaponStatus/AmmoText").GetComponent<Text>();
@@ -145,6 +145,16 @@ public class WeaponBase : MonoBehaviour
     if (!weaponAmmoText)
     {
       weaponAmmoText = GameObject.Find("UI/StartGameUI/WeaponStatus/AmmoText").GetComponent<Text>();
+    }
+    if (!prefabManager)
+    {
+      prefabManager = PrefabManager.GetInstance();
+      spriteManager = SpriteManager.GetInstance();
+
+      crosshairCross = spriteManager.GetSprite("Crosshair_Default");
+      crosshairCrossAim = spriteManager.GetSprite("Crosshair_Default_Aim");
+      crosshairCircle = spriteManager.GetSprite("Crosshair_Circle");
+      crosshairCircleAim = spriteManager.GetSprite("Crosshair_Circle_Aim");
     }
 
     if (fireMode == FireMode.SEMI && Input.GetButtonDown("Fire1") && !isReloading)

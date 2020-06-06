@@ -29,16 +29,6 @@ public class ShopDetector : MonoBehaviour
 
   void PrintWarning(string text)
   {
-    if (!shopText)
-    {
-      shopText = GameObject.Find("UI/StartGameUI/Info/ShopText").GetComponent<Text>();
-    }
-
-    if (!warningText)
-    {
-      warningText = GameObject.Find("UI/StartGameUI/Info/WarningText").GetComponent<Text>();
-    }
-
     if (warningTextCo != null) StopCoroutine(warningTextCo);
 
     warningTextCo = HideWarningText();
@@ -134,6 +124,16 @@ public class ShopDetector : MonoBehaviour
 
   void Update()
   {
+    if (!shopText)
+    {
+      shopText = GameObject.Find("UI/StartGameUI/Info/ShopText").GetComponent<Text>();
+    }
+
+    if (!warningText)
+    {
+      warningText = GameObject.Find("UI/StartGameUI/Info/WarningText").GetComponent<Text>();
+    }
+
     RaycastHit hit;
     Vector3 position = shootPoint.position;
     position.y += 1;  // Adjust height differences
