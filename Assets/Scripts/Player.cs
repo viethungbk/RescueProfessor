@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
   private HealthManager healthManager;
   private bool isDestroyed = false;
   public GameObject deadScreen;
+  public GameObject reloadButton;
 
 
   void Start()
@@ -23,6 +24,10 @@ public class Player : MonoBehaviour
     if (!deadScreen)
     {
       deadScreen = GameObject.Find("UI/StartGameUI/DeadScreen");
+    }
+    if (!reloadButton)
+    {
+      reloadButton = GameObject.Find("UI/StartGameUI/ReloadButton");
     }
 
     if (healthManager.IsDead && !isDestroyed)
@@ -46,6 +51,9 @@ public class Player : MonoBehaviour
           DisableController((FirstPersonController)script);
         }
       }
+
+      reloadButton.SetActive(false);
+
     }
   }
 
@@ -71,6 +79,8 @@ public class Player : MonoBehaviour
       image.color = new Color(origColor.r, origColor.g, origColor.b, alpha);
       yield return new WaitForSeconds(0.1f);
     }
+
+    Time.timeScale = 0;
 
     yield break;
   }
