@@ -13,12 +13,18 @@ public class Player : MonoBehaviour
 
   void Start()
   {
-    healthManager = GetComponent<HealthManager>();
-    deadScreen = GameObject.Find("UI/StartGameUI/DeadScreen");
+    // healthManager = GetComponent<HealthManager>();
+    healthManager = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<HealthManager>();
+    // deadScreen = GameObject.Find("UI/StartGameUI/DeadScreen");
   }
 
   void Update()
   {
+    if (!deadScreen)
+    {
+      deadScreen = GameObject.Find("UI/StartGameUI/DeadScreen");
+    }
+
     if (healthManager.IsDead && !isDestroyed)
     {
       isDestroyed = true;

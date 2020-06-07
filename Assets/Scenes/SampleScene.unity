@@ -3169,6 +3169,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1728770666}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1582136521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582136514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0c2ecd592de58489f1760ba9703269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPlayer: 1
+  removeColliderOnDeath: 0
+  referer: {fileID: 0}
+  damageFactor: 1
+  healthText: {fileID: 0}
 --- !u!1 &1618308896
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,6 +3423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337742030896376493, guid: 027c09f8261a9e74580e418af352e175,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6337742030896376495, guid: 027c09f8261a9e74580e418af352e175,
         type: 3}
