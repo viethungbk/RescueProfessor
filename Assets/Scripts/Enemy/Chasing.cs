@@ -136,7 +136,7 @@ public class Chasing : MonoBehaviour
     Vector3 direction = target.transform.position - this.transform.position;
     float angle = Vector3.Angle(direction, this.transform.forward);
 
-    if (!isAttacking && distanceFromTarget <= 2.0f && angle <= 60f)
+    if (!isAttacking && distanceFromTarget <= 3.0f && angle <= 60f)
     {
       isAttacking = true;
       shouldChase = false;
