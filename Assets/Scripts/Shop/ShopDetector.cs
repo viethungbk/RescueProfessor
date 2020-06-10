@@ -11,6 +11,8 @@ public class ShopDetector : MonoBehaviour
   public Text warningText;
   public AudioClip purchasedSound;
 
+  GameObject buyButton;
+
   IEnumerator warningTextCo = null;
 
   IEnumerator HideWarningText()
@@ -134,6 +136,11 @@ public class ShopDetector : MonoBehaviour
       warningText = GameObject.Find("UI/StartGameUI/Info/WarningText").GetComponent<Text>();
     }
 
+    if (!buyButton)
+    {
+      buyButton = GameObject.Find("UI/StartGameUI/BuyButton");
+    }
+
     RaycastHit hit;
     Vector3 position = shootPoint.position;
     position.y += 1;  // Adjust height differences
@@ -209,8 +216,11 @@ public class ShopDetector : MonoBehaviour
           shopText.text = shopTitle + "\n(" + shopPrice + "$)\n\n" + shopDesc + "\n\n";
         }
 
-        if (isPurchasable && Input.GetKeyDown(KeyCode.F))
+        // if (isPurchasable && Input.GetKeyDown(KeyCode.F))
+        if (isPurchasable)
         {
+          buyButton.SetActive(true);
+
           FundSystem fundSystem = transform.parent.GetComponent<FundSystem>();
           int fund = fundSystem.GetFund();
 
