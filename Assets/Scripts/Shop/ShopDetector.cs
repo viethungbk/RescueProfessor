@@ -12,6 +12,11 @@ public class ShopDetector : MonoBehaviour
   public AudioClip purchasedSound;
 
   GameObject buyButton;
+  bool isPurchasable = true;
+  ShopType shopType;
+  string shopTitle;
+  string shopDesc;
+  int shopPrice;
 
   IEnumerator warningTextCo = null;
 
@@ -150,12 +155,14 @@ public class ShopDetector : MonoBehaviour
     {
       if (hit.transform.tag == "Shop")
       {
+        buyButton.SetActive(true);
+
         Shop shop = hit.transform.GetComponent<Shop>();
-        ShopType shopType = shop.shopType;
-        string shopTitle = shop.title;
-        string shopDesc = shop.description;
-        int shopPrice = shop.price;
-        bool isPurchasable = true;
+        shopType = shop.shopType;
+        shopTitle = shop.title;
+        shopDesc = shop.description;
+        shopPrice = shop.price;
+        // bool isPurchasable = true;
 
         WeaponManager weaponManager = transform.Find("WeaponHolder").GetComponent<WeaponManager>();
         WeaponBase weaponBase = weaponManager.currentWeaponGO.GetComponent<WeaponBase>();
@@ -215,118 +222,231 @@ public class ShopDetector : MonoBehaviour
         {
           shopText.text = shopTitle + "\n(" + shopPrice + "$)\n\n" + shopDesc + "\n\n";
         }
+      }
+      // if (isPurchasable && Input.GetKeyDown(KeyCode.F))
+      //     {
+      //       FundSystem fundSystem = transform.parent.GetComponent<FundSystem>();
+      //       int fund = fundSystem.GetFund();
 
-        // if (isPurchasable && Input.GetKeyDown(KeyCode.F))
-        if (isPurchasable)
+      //       if (fund < shopPrice)
+      //       {
+      //         PrintWarning("Not enough money!");
+      //       }
+      //       else
+      //       {
+      //         bool wasPurchased = true;
+
+      //         if (shopType == ShopType.AMMO)
+      //         {
+      //           weaponBase.bulletsLeft = weaponBase.startBullets + weaponBase.bulletsPerMag;
+      //           weaponBase.UpdateAmmoText();
+      //         }
+      //         else if (shopType == ShopType.WEAPON_MP5K)
+      //         {
+      //           if (!weaponManager.HasWeapon(Weapon.MP5K))
+      //           {
+      //             BuyWeapon(Weapon.MP5K);
+      //           }
+      //           else
+      //           {
+      //             wasPurchased = false;
+      //             PrintWarning("You already have weapon.");
+      //           }
+      //         }
+      //         else if (shopType == ShopType.WEAPON_AKM)
+      //         {
+      //           if (!weaponManager.HasWeapon(Weapon.AKM))
+      //           {
+      //             BuyWeapon(Weapon.AKM);
+      //           }
+      //           else
+      //           {
+      //             wasPurchased = false;
+      //             PrintWarning("You already have weapon.");
+      //           }
+      //         }
+      //         else if (shopType == ShopType.WEAPON_M870)
+      //         {
+      //           if (!weaponManager.HasWeapon(Weapon.M870))
+      //           {
+      //             BuyWeapon(Weapon.M870);
+      //           }
+      //           else
+      //           {
+      //             wasPurchased = false;
+      //             PrintWarning("You already have weapon.");
+      //           }
+      //         }
+      //         else if (shopType == ShopType.UPGRADE_DAMAGE)
+      //         {
+      //           if (weaponBase.upgradeDamage >= 10)
+      //           {
+      //             wasPurchased = false;
+      //             PrintWarning("Your weapon is fully upgraded.");
+      //           }
+      //           else
+      //           {
+      //             UpgradeWeapon(weaponBase, ShopType.UPGRADE_DAMAGE);
+      //           }
+      //         }
+      //         else if (shopType == ShopType.UPGRADE_RELOAD)
+      //         {
+      //           if (weaponBase.upgradeReload >= 10)
+      //           {
+      //             wasPurchased = false;
+      //             PrintWarning("Your weapon is fully upgraded.");
+      //           }
+      //           else
+      //           {
+      //             UpgradeWeapon(weaponBase, ShopType.UPGRADE_RELOAD);
+      //           }
+      //         }
+      //         else if (shopType == ShopType.UPGRADE_RECOIL)
+      //         {
+      //           if (weaponBase.upgradeRecoil >= 10)
+      //           {
+      //             wasPurchased = false;
+      //             PrintWarning("Your weapon is fully upgraded.");
+      //           }
+      //           else
+      //           {
+      //             UpgradeWeapon(weaponBase, ShopType.UPGRADE_RECOIL);
+      //           }
+      //         }
+      //         else
+      //         {
+      //           wasPurchased = false;
+      //         }
+
+      //         if (wasPurchased)
+      //         {
+      //           fundSystem.TakeFund(shopPrice);
+      //           SoundManager soundManager = transform.Find("SoundManager").GetComponent<SoundManager>();
+      //           soundManager.Play(purchasedSound);
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
+
+
+      else
+      {
+        shopText.text = "";
+        buyButton.SetActive(false);
+      }
+    }
+  }
+
+
+  public void Purchase()
+  {
+    if (isPurchasable)
+    {
+      WeaponManager weaponManager = transform.Find("WeaponHolder").GetComponent<WeaponManager>();
+      WeaponBase weaponBase = weaponManager.currentWeaponGO.GetComponent<WeaponBase>();
+      Weapon weapon = weaponManager.currentWeapon;
+
+      FundSystem fundSystem = transform.parent.GetComponent<FundSystem>();
+      int fund = fundSystem.GetFund();
+
+      if (fund < shopPrice)
+      {
+        PrintWarning("Not enough money!");
+      }
+      else
+      {
+        bool wasPurchased = true;
+
+        if (shopType == ShopType.AMMO)
         {
-          buyButton.SetActive(true);
-
-          FundSystem fundSystem = transform.parent.GetComponent<FundSystem>();
-          int fund = fundSystem.GetFund();
-
-          if (fund < shopPrice)
+          weaponBase.bulletsLeft = weaponBase.startBullets + weaponBase.bulletsPerMag;
+          weaponBase.UpdateAmmoText();
+        }
+        else if (shopType == ShopType.WEAPON_MP5K)
+        {
+          if (!weaponManager.HasWeapon(Weapon.MP5K))
           {
-            PrintWarning("Not enough money!");
+            BuyWeapon(Weapon.MP5K);
           }
           else
           {
-            bool wasPurchased = true;
-
-            if (shopType == ShopType.AMMO)
-            {
-              weaponBase.bulletsLeft = weaponBase.startBullets + weaponBase.bulletsPerMag;
-              weaponBase.UpdateAmmoText();
-            }
-            else if (shopType == ShopType.WEAPON_MP5K)
-            {
-              if (!weaponManager.HasWeapon(Weapon.MP5K))
-              {
-                BuyWeapon(Weapon.MP5K);
-              }
-              else
-              {
-                wasPurchased = false;
-                PrintWarning("You already have weapon.");
-              }
-            }
-            else if (shopType == ShopType.WEAPON_AKM)
-            {
-              if (!weaponManager.HasWeapon(Weapon.AKM))
-              {
-                BuyWeapon(Weapon.AKM);
-              }
-              else
-              {
-                wasPurchased = false;
-                PrintWarning("You already have weapon.");
-              }
-            }
-            else if (shopType == ShopType.WEAPON_M870)
-            {
-              if (!weaponManager.HasWeapon(Weapon.M870))
-              {
-                BuyWeapon(Weapon.M870);
-              }
-              else
-              {
-                wasPurchased = false;
-                PrintWarning("You already have weapon.");
-              }
-            }
-            else if (shopType == ShopType.UPGRADE_DAMAGE)
-            {
-              if (weaponBase.upgradeDamage >= 10)
-              {
-                wasPurchased = false;
-                PrintWarning("Your weapon is fully upgraded.");
-              }
-              else
-              {
-                UpgradeWeapon(weaponBase, ShopType.UPGRADE_DAMAGE);
-              }
-            }
-            else if (shopType == ShopType.UPGRADE_RELOAD)
-            {
-              if (weaponBase.upgradeReload >= 10)
-              {
-                wasPurchased = false;
-                PrintWarning("Your weapon is fully upgraded.");
-              }
-              else
-              {
-                UpgradeWeapon(weaponBase, ShopType.UPGRADE_RELOAD);
-              }
-            }
-            else if (shopType == ShopType.UPGRADE_RECOIL)
-            {
-              if (weaponBase.upgradeRecoil >= 10)
-              {
-                wasPurchased = false;
-                PrintWarning("Your weapon is fully upgraded.");
-              }
-              else
-              {
-                UpgradeWeapon(weaponBase, ShopType.UPGRADE_RECOIL);
-              }
-            }
-            else
-            {
-              wasPurchased = false;
-            }
-
-            if (wasPurchased)
-            {
-              fundSystem.TakeFund(shopPrice);
-              SoundManager soundManager = transform.Find("SoundManager").GetComponent<SoundManager>();
-              soundManager.Play(purchasedSound);
-            }
+            wasPurchased = false;
+            PrintWarning("You already have weapon.");
           }
         }
+        else if (shopType == ShopType.WEAPON_AKM)
+        {
+          if (!weaponManager.HasWeapon(Weapon.AKM))
+          {
+            BuyWeapon(Weapon.AKM);
+          }
+          else
+          {
+            wasPurchased = false;
+            PrintWarning("You already have weapon.");
+          }
+        }
+        else if (shopType == ShopType.WEAPON_M870)
+        {
+          if (!weaponManager.HasWeapon(Weapon.M870))
+          {
+            BuyWeapon(Weapon.M870);
+          }
+          else
+          {
+            wasPurchased = false;
+            PrintWarning("You already have weapon.");
+          }
+        }
+        else if (shopType == ShopType.UPGRADE_DAMAGE)
+        {
+          if (weaponBase.upgradeDamage >= 10)
+          {
+            wasPurchased = false;
+            PrintWarning("Your weapon is fully upgraded.");
+          }
+          else
+          {
+            UpgradeWeapon(weaponBase, ShopType.UPGRADE_DAMAGE);
+          }
+        }
+        else if (shopType == ShopType.UPGRADE_RELOAD)
+        {
+          if (weaponBase.upgradeReload >= 10)
+          {
+            wasPurchased = false;
+            PrintWarning("Your weapon is fully upgraded.");
+          }
+          else
+          {
+            UpgradeWeapon(weaponBase, ShopType.UPGRADE_RELOAD);
+          }
+        }
+        else if (shopType == ShopType.UPGRADE_RECOIL)
+        {
+          if (weaponBase.upgradeRecoil >= 10)
+          {
+            wasPurchased = false;
+            PrintWarning("Your weapon is fully upgraded.");
+          }
+          else
+          {
+            UpgradeWeapon(weaponBase, ShopType.UPGRADE_RECOIL);
+          }
+        }
+        else
+        {
+          wasPurchased = false;
+        }
+
+        if (wasPurchased)
+        {
+          fundSystem.TakeFund(shopPrice);
+          SoundManager soundManager = transform.Find("SoundManager").GetComponent<SoundManager>();
+          soundManager.Play(purchasedSound);
+        }
       }
-    }
-    else
-    {
-      shopText.text = "";
     }
   }
 }
