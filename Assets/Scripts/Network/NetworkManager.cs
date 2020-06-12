@@ -32,8 +32,8 @@ public class NetworkManager : MonoBehaviour
     // GameObject playerObj = Instantiate(player, PlayerSpawnPoint.position, PlayerSpawnPoint.rotation);
 
     startGameUI.SetActive(true);
-    // enemySpawner.SetActive(true);
-    // enemySpawner.GetComponent<EnemySpawner>().target = playerCamera;
+    enemySpawner.SetActive(true);
+    enemySpawner.GetComponent<EnemySpawner>().target = playerCamera;
   }
 
 }
