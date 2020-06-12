@@ -157,18 +157,18 @@ public class WeaponBase : MonoBehaviour
       crosshairCircleAim = spriteManager.GetSprite("Crosshair_Circle_Aim");
     }
 
-    if (fireMode == FireMode.SEMI && Input.GetButtonDown("Fire1") && !isReloading)
-    {
-      Fire();
-    }
-    else if (fireMode == FireMode.AUTO && Input.GetButton("Fire1") && !isReloading)
-    {
-      Fire();
-    }
-    else if (Input.GetButtonDown("Reload"))
-    {
-      StartReload();
-    }
+    // if (fireMode == FireMode.SEMI && Input.GetButtonDown("Fire1") && !isReloading)
+    // {
+    //   Fire();
+    // }
+    // else if (fireMode == FireMode.AUTO && Input.GetButton("Fire1") && !isReloading)
+    // {
+    //   Fire();
+    // }
+    // else if (Input.GetButtonDown("Reload"))
+    // {
+    //   StartReload();
+    // }
 
     if (fireTimer < fireRate)
     {
@@ -209,7 +209,7 @@ public class WeaponBase : MonoBehaviour
     return extraDamage + damage;
   }
 
-  void Fire()
+  public void Fire()
   {
     if (fireTimer < fireRate || !isEnabled) return;
 
