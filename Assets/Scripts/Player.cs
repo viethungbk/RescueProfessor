@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
   private bool isDestroyed = false;
   public GameObject deadScreen;
   public GameObject reloadButton;
+  public GameObject fireButton;
 
 
   void Start()
@@ -28,6 +29,10 @@ public class Player : MonoBehaviour
     if (!reloadButton)
     {
       reloadButton = GameObject.Find("UI/StartGameUI/ReloadButton");
+    }
+    if (!fireButton)
+    {
+      fireButton = GameObject.Find("UI/StartGameUI/FireButton");
     }
 
     if (healthManager.IsDead && !isDestroyed)
@@ -53,7 +58,7 @@ public class Player : MonoBehaviour
       }
 
       reloadButton.SetActive(false);
-
+      fireButton.SetActive(false);
     }
   }
 

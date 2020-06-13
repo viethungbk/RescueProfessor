@@ -20,6 +20,8 @@ public class Chasing : MonoBehaviour
   public AudioClip attackSound;
   public AudioClip deathSound;
 
+  GameObject bloodScreen;
+
   // Use this for initialization
   void Start()
   {
@@ -29,6 +31,8 @@ public class Chasing : MonoBehaviour
     audioSource = GetComponent<AudioSource>();
 
     networkManager = GameObject.Find("GameController").GetComponent<NetworkManager>();
+
+    bloodScreen = GameObject.Find("UI/StartGameUI/BloodScreen");
   }
 
   IEnumerator distUpdateCo = null;
@@ -136,7 +140,7 @@ public class Chasing : MonoBehaviour
     Vector3 direction = target.transform.position - this.transform.position;
     float angle = Vector3.Angle(direction, this.transform.forward);
 
-    if (!isAttacking && distanceFromTarget <= 3.0f && angle <= 60f)
+    if (!isAttacking && distanceFromTarget <= 27.0f && angle <= 60f)
     {
       isAttacking = true;
       shouldChase = false;
@@ -154,8 +158,18 @@ public class Chasing : MonoBehaviour
         targetHealthManager.ApplyDamage(damage);
       }
 
+      StartCoroutine(ShowBloodScreen());
+
       StartCoroutine(ResetAttacking());
     }
+  }
+
+  IEnumerator ShowBloodScreen()
+  {
+    bloodScreen.SetActive(true);
+    yield return new WaitForSeconds(1.0f);
+
+    bloodScreen.SetActive(false);
   }
 
   IEnumerator ResetAttacking()

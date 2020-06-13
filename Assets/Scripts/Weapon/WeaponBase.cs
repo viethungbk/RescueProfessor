@@ -102,6 +102,8 @@ public class WeaponBase : MonoBehaviour
 
   private WeaponBob weaponBob;
 
+  GameObject victoryScreen;
+
   public bool IsEnabled
   {
     get
@@ -155,6 +157,11 @@ public class WeaponBase : MonoBehaviour
       crosshairCrossAim = spriteManager.GetSprite("Crosshair_Default_Aim");
       crosshairCircle = spriteManager.GetSprite("Crosshair_Circle");
       crosshairCircleAim = spriteManager.GetSprite("Crosshair_Circle_Aim");
+    }
+
+    if (!victoryScreen)
+    {
+      victoryScreen = GameObject.Find("UI/StartGameUI/VictoryScreen");
     }
 
     // if (fireMode == FireMode.SEMI && Input.GetButtonDown("Fire1") && !isReloading)
@@ -234,9 +241,16 @@ public class WeaponBase : MonoBehaviour
         if (health)
         {
           health.ApplyDamage(GetWeaponDamage());
+          CreateBlood(hit.point);
 
           if (health.IsDead)
           {
+            if (hit.transform.tag == "Professor")
+            {
+              victoryScreen.SetActive(true);
+              Time.timeScale = 0;
+            }
+
             KillReward killReward;
 
             // Check it was head
@@ -261,19 +275,19 @@ public class WeaponBase : MonoBehaviour
             }
           }
 
-          EnemyType enemyType = hit.transform.GetComponent<EnemyType>();
+          // EnemyType enemyType = hit.transform.GetComponent<EnemyType>();
 
-          if (enemyType)
-          {
-            if (enemyType.type == Type.BIO)
-            {
-              CreateBlood(hit.point);
-            }
-          }
-          else
-          {
-            CreateRicochet(hit.point, hit.normal);
-          }
+          // if (enemyType)
+          // {
+          //   if (enemyType.type == Type.BIO)
+          //   {
+          //     CreateBlood(hit.point);
+          //   }
+          // }
+          // else
+          // {
+          //   CreateRicochet(hit.point, hit.normal);
+          // }
         }
         else
         {

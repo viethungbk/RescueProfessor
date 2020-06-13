@@ -10,6 +10,8 @@ TagManager:
   - effect
   - loweffect
   - WeaponHolder
+  - explosion
+  - Professor
   layers:
   - Default
   - TransparentFX
