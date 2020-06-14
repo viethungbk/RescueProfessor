@@ -78,8 +78,9 @@ public class SceneController : MonoBehaviour
     gameController.SetActive(true);
 
     // gamePlayAR.transform.position = selectedPlane.CenterPose.position;
-    gamePlayAR.transform.position = new Vector3(selectedPlane.CenterPose.position.x, selectedPlane.CenterPose.position.y, selectedPlane.CenterPose.position.z);
-    gamePlayAR.transform.rotation = selectedPlane.CenterPose.rotation;
+    // gamePlayAR.transform.position = new Vector3(selectedPlane.CenterPose.position.x, selectedPlane.CenterPose.position.y, selectedPlane.CenterPose.position.z);
+    // gamePlayAR.transform.rotation = selectedPlane.CenterPose.rotation;
+    // gamePlayAR.transform.localScale = new Vector3(3, 3, 3);
 
     gameObject.SetActive(false);
 

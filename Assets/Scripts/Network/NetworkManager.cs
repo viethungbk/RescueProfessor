@@ -16,14 +16,6 @@ public class NetworkManager : MonoBehaviour
   public GameObject startGameUI;
   public Text statusText;
 
-  // public List<GameObject> Players
-  // {
-  //   get
-  //   {
-  //     return players;
-  //   }
-  // }
-
   void Start()
   {
     // labCam.SetActive(false);

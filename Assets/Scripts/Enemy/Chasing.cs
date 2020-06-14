@@ -46,9 +46,6 @@ public class Chasing : MonoBehaviour
     {
       if (!isAttacking)
       {
-        // NetworkPlayer targetNetworkPlayer = target.GetComponent<NetworkPlayer>();
-
-        // if(targetNetworkPlayer.IsLocalPlayer) {
         float distance = GetActualDistanceFromTarget();
 
         // Reduce calculation of path finding
@@ -85,7 +82,6 @@ public class Chasing : MonoBehaviour
             StartCoroutine(distUpdateCo);
           }
         }
-        // }
       }
 
       animator.SetFloat("SpeedMultiplier", agent.speed);
@@ -140,7 +136,7 @@ public class Chasing : MonoBehaviour
     Vector3 direction = target.transform.position - this.transform.position;
     float angle = Vector3.Angle(direction, this.transform.forward);
 
-    if (!isAttacking && distanceFromTarget <= 27.0f && angle <= 60f)
+    if (!isAttacking && distanceFromTarget <= 100.0f && angle <= 100f)
     {
       isAttacking = true;
       shouldChase = false;
@@ -191,7 +187,6 @@ public class Chasing : MonoBehaviour
   IEnumerator RemoveGameObject()
   {
     yield return new WaitForSeconds(5f);
-    // PhotonNetwork.Destroy(gameObject);
     Destroy(gameObject);
   }
 }

@@ -448,7 +448,7 @@ public class WeaponBase : MonoBehaviour
   IEnumerator PrepareWeapon()
   {
     yield return new WaitForEndOfFrame();
-    weaponNameText.text = weaponName + "(" + weaponType.ToString() + ")";
+    weaponNameText.text = weaponName;
 
     UpdateAmmoText();
 

@@ -6,17 +6,19 @@ using UnityEngine.AI;
 public class EnemySpawner : MonoBehaviour
 {
   [Header("Enemy Spawn Management")]
-  public float respawnDuration = 5.0f;
+
+  public int maxEnemy = 30;
+  public float respawnDuration = 10.0f;
   public List<GameObject> spawnPoints = new List<GameObject>();
   public GameObject target;
 
   [Header("Enemy Status")]
   public float startHealth = 100f;
-  public float startMoveSpeed = 1f;
+  public float startMoveSpeed = 30f;
   public float startDamage = 15f;
   public int startEXP = 3;
   public int startFund = 5;
-  public float upgradeDuration = 60f; // Increase all enemy stats every 30 seconds
+  public float upgradeDuration = 60f; // Increase all enemy stats every 60 seconds
 
   private float upgradeTimer;
   [SerializeField]
@@ -37,6 +39,7 @@ public class EnemySpawner : MonoBehaviour
 
   private PrefabManager prefabManager;
   private List<GameObject> enemies = new List<GameObject>();
+
 
   void Start()
   {
