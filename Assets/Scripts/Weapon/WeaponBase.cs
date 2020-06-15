@@ -466,7 +466,7 @@ public class WeaponBase : MonoBehaviour
   public void UpdateAmmoText()
   {
     Debug.Log("UpdateAmmoText: " + loadedBullets + " / " + bulletsLeft);
-    weaponAmmoText.text = loadedBullets + " / " + bulletsLeft;
+    weaponAmmoText.text = "Ammo " + loadedBullets + " / " + bulletsLeft;
   }
 
   public void Unload()

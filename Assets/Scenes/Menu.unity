@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VOLUME
+  m_text: BG MUSIC
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f311a8d31c28ae34f8f975ad3e73475d, type: 2}
   m_sharedMaterial: {fileID: -7831589616280674171, guid: f311a8d31c28ae34f8f975ad3e73475d,

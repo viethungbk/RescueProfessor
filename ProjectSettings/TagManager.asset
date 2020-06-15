@@ -12,6 +12,7 @@ TagManager:
   - WeaponHolder
   - explosion
   - Professor
+  - Wall
   layers:
   - Default
   - TransparentFX

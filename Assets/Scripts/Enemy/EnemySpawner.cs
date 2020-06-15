@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
   [Header("Enemy Spawn Management")]
 
-  public int maxEnemy = 30;
+  public int maxEnemy = 10;
   public float respawnDuration = 10.0f;
   public List<GameObject> spawnPoints = new List<GameObject>();
   public GameObject target;
@@ -63,7 +63,10 @@ public class EnemySpawner : MonoBehaviour
     }
     else
     {
-      SpawnEnemy();
+      if (maxEnemy > 0)
+      {
+        SpawnEnemy();
+      }
     }
 
     if (upgradeTimer < upgradeDuration)
@@ -102,6 +105,7 @@ public class EnemySpawner : MonoBehaviour
 
       // PhotonNetwork.Instantiate("Zombie", spawnPoint.transform.position, spawnPoint.transform.rotation, 0);
       Instantiate(zombie, spawnPoint.transform.position, spawnPoint.transform.rotation);
+      maxEnemy--;
     }
 
     spawnTimer = 0f;
